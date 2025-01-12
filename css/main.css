@@ -58,6 +58,7 @@ h1{
     margin: 0%;
     font-weight: normal;
     font-size: 38px;
+    color: rgb(68, 114, 196);
 }
 
 h2{
@@ -68,7 +69,7 @@ h2{
     font-style: italic;
 }
 a {
-    text-decoration: underline dotted rgb(203, 153, 61) 2px;
+    text-decoration: underline dotted rgb(237, 125, 49) 2px;
     text-underline-offset: 3px;
     color: black;
 }
