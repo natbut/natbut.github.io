@@ -1,6 +1,6 @@
 ## Personal website
 
-Implemented in html
+Implemented in html. Site design template credit to: https://github.com/raghavthakar/raghavthakar.com
 
 <!--
 **natbut/natbut** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
