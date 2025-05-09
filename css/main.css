@@ -25,12 +25,12 @@ body {
         margin-right: 2%;
     }
 
-    .profile-img-right{
+    .profile-img-right {
         display: none;
         padding-left: 0%;
     }
 
-    .intro-text{
+    .intro-text {
         padding-right: 0%;
     }
 
@@ -44,16 +44,16 @@ body {
         font-size: 14px;
     }
 
-    h1{
+    h1 {
         font-size: 24px;
     }
-    
-    h2{
+
+    h2 {
         font-size: 18px;
     }
 }
 
-h1{
+h1 {
     padding: 0%;
     margin: 0%;
     font-weight: normal;
@@ -61,21 +61,21 @@ h1{
     color: rgb(68, 114, 196);
 }
 
-h2{
-    padding: 0%;
+h2 {
+    padding-top: 2.5%;
     margin: 0%;
-    font-weight:normal;
+    font-weight: normal;
     font-size: 24px;
     font-style: italic;
 }
+
 a {
     text-decoration: underline dotted rgb(237, 125, 49) 2px;
     text-underline-offset: 3px;
     color: black;
 }
 
-a:hover
-{
+a:hover {
     text-decoration: none;
     color: rgb(203, 153, 61);
 }
@@ -94,50 +94,95 @@ nav ul {
     padding: 0;
 }
 
-nav ul img{
+nav ul img {
     width: 100px;
 }
 
-.intro-text{
-    width: 75%; 
-    padding-right: 2.5%; 
+.intro-text {
+    width: 75%;
+    padding-right: 2.5%;
     vertical-align: middle;
     text-align: left;
 }
 
-.profile-img-right{
+.profile-img-right {
     width: 25%;
     min-width: 250px;
     padding-left: 2.5%;
 }
 
-.profile-img-top{
+.profile-img-top {
     min-width: 250px;
     text-align: center;
     display: none;
 }
 
-.project-item{
+.project-item {
     width: 50%;
     vertical-align: top;
     padding-bottom: 2%;
     padding-right: 2%;
 }
 
-.experience-ul{
+.left-nav {
+    padding-bottom: 2.5%;
+    text-align: left;
+}
+
+.experience-ul {
     padding-top: 0%;
 }
 
-.experience-ul li{
+.experience-ul li {
     padding-bottom: 2.5%;
 }
 
-#last-modified{
-    font-family: 'Courier New', Courier, monospace; 
+.updates-ul {
+    padding-top: 0%;
+}
+
+.updates-ul li {
+    padding-bottom: 2.5%;
+}
+
+.pubs-ul {
+    padding-top: 0%;
+}
+
+.pubs-ul li {
+    margin-bottom: 2.5%;
+}
+
+.paper-h1 {
+    padding: 0%;
+    margin: 0%;
+    font-weight: normal;
+    font-size: 38px;
+    text-align: center;
+    color: rgb(68, 114, 196);
+}
+
+.paper-p {
+    padding: 0%;
+    margin: 0%;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+#last-modified {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
 }
 
-#publish-date{
-    font-family: 'Courier New', Courier, monospace; 
+#publish-date {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
 }

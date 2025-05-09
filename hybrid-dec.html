@@ -1,0 +1,69 @@
+<!-- hybrid-dec.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Decentralization for Multi-Robot Orienteering with Mothership-Passenger Systems</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="icon" type="image/x-icon" href="img/round1.png"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="left-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="projects.html">Projects</a></li> -->
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="paper-h1">Hybrid Decentralization for Multi-Robot Orienteering with Mothership-Passenger Systems</h1>
+        <div style="text-align: center;"></div>
+        <div style="text-align: center;">
+            Nathan L. Butler and Geoffrey A. Hollinger
+            <br><br>
+            <a href="docs/Butler_Hybrid_Decentralization_ICRA2025.pdf">PDF</a>
+            <!-- <a href="https://www.linkedin.com/in/nlbutler/" target="_blank">LinkedIn</a> / -->
+        </div>
+
+        <br>
+
+        <img src="img/mission_schamatic_4.png" alt="" style="max-width: 75%;" class="center">
+
+        <h2>Overview</h2>
+        <p class="paper-p">We present a hybrid centralized-decentralized
+            planning algorithm for a multi-robot system consisting of
+            a Mothership robot and multiple Passenger robots. In this
+            system, the Passenger robots execute tasks while the Mothership
+            provides support. This paper addresses the challenge of
+            planning Passenger robot movements, framing it as a Stochastic
+            Multi-Agent Orienteering Problem (SMOP) complicated by
+            factors like stochastic operational efforts and disruptive events.
+            We optimize the task completion efficiency of the system by
+            combining centralized solutions from the Mothership with local
+            plans from Passengers to enhance system resilience. Our contributions
+            include defining the SMOP, developing a solution using
+            Decentralized Monte Carlo Tree Search, presenting a hybrid
+            algorithm that integrates centralized plans into the distributed
+            framework, and evaluating the algorithm’s performance in
+            a simulated environment. Our results show that our hybrid
+            approaches outperform fully centralized and fully distributed
+            algorithms in highly-dynamic scenarios with up to a 26.6%
+            increase in task completion efficiency over baseline methods.</p>
+
+        <h2>Video Walkthrough</h2>
+        <!-- <p class="paper-p">Stay tuned for updates…</p> -->
+
+        <video controls class="center" style="max-width: 90%;">
+            <source src="img/MOTHERSHIP_ICRA25_SupplVid_Sims_480p_2.mp4" type="video/mp4">
+        </video>
+
+    </main>
+</body>
+
+</html>
