@@ -1,0 +1,73 @@
+<!-- hybrid-dec.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinated Underwater Exploration with Multiagent Evolutionary
+    Reinforcement Learning</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <!-- <link rel="icon" type="image/x-icon" href="img/round1.png"> -->
+</head>
+
+<body>
+    <header>
+        <nav class="left-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <!-- <li><a href="projects.html">Projects</a></li> -->
+                <li><a href="../projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="paper-h1">Coordinated Underwater Exploration with Multiagent Evolutionary Reinforcement Learning</h1>
+
+        <div style="text-align: center;">
+            Class Project for Robotics 538: Multiagent Systems
+            <br><br>
+            <a href="../../docs/ROB538_ProjectPaper_ButlerOhWells.pdf">PDF</a>
+            <!-- <a href="https://www.linkedin.com/in/nlbutler/" target="_blank">LinkedIn</a> / -->
+        </div>
+
+        <br>
+
+        <h2>Overview</h2>
+        <p class="paper-p">
+        In this class project, we explored multiagent evolutionary reinforcement learning (MERL) frameworks for training multiple policies in sparse reward environments. This work was inspired by connectivity maintenance problems for multi-robot teams. We define a simple sparse reward environment where a subset of the multiagent team must position themselves as intermediate communication relays in order for maximum rewards to be obtained from task locations. Using MERL, we are able to iteratively evolve and refine a set of policies that results in coordinated behaviors for this environment. </p>
+
+        <br>
+
+        <h2>MERL Framework</h2>
+        <p class="paper-p">
+        MERL addresses sparse reward settings by training polices in a manner that iterates between reinforcement learning (RL) and an evolutionary algorithm (EA). The EA initializes a diverse population of team policies. We perform multiple policy rollouts in our training environment to evaluate the fitness of each (max performance). Next, the best-performing policy is applied in an RL setting to receive refined, dense training feedback before being returned to the EA population pool. This cycle repeats until convergence.
+        </p>
+
+        <img src="../../img/merl_fig.png" alt="" style="max-width: 100%;" class="center">
+
+        <br>
+
+
+        <h2>Multi-Headed Policy</h2>
+        <p class="paper-p">
+        We configure our team policy as a multi-headed policy in which each agent uses a shared trunk. The output of the trunk is provided to each agent's individual policy head. This structure allows the trunk to perform general, high-level environment processing before each agent's head provides fine-grained, unique behaviors. In training, the EA adjusts the weights of each aspect of the network while the RL loop refines only each agent's head. For further details on policy configuration and training, see the attached PDF at the top of the page.
+        </p>
+
+        <img src="../../img/multihead_fig.png" alt="" style="max-width: 80%;" class="center">
+
+        <br>
+
+        <h2>Training Evaluations</h2>
+        <p class="paper-p">
+        We trained our policy with two dense RL reward functions to address the sparse environmental feedback. Our L1 reward function motivates agents to optimize their spacing between other agents and a central communication location. L2 rewards agents for moving towards incomplete tasks. While neither reward is directly aligned with the problem's overall global reward, our results show that the RL loop guides policies to higher rewards faster than the EA-only loop.
+        </p>
+
+
+        <img src="../../img/merl_avgs.png" alt="" style="max-width: 80%;" class="center">
+
+    </main>
+</body>
+
+</html>
