@@ -1,11 +1,10 @@
-<!-- projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects — Nathan Butler</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/x-icon" href="img/site/round1.png">
 </head>
@@ -13,11 +12,12 @@
 <body>
     <header>
         <nav>
+            <a class="nav-logo" href="index.html">
+                <img src="img/site/round1.png" alt="Nathan Butler">
+            </a>
             <ul>
-                <li><a href="index.html"><img src="img/site/round1.png" alt="Logo"></a></li>
-                <br>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="publications.html">Publications</a></li>
             </ul>
         </nav>
@@ -25,80 +25,79 @@
 
     <main>
         <h1>Ongoing Projects</h1>
+        <p style="color: var(--text-secondary); margin-top: 0.75rem;">Stay tuned for updates…</p>
 
-        <br>
-
-        <p>Stay tuned for updates…</p>
-
-        <br>
-
-
+        <hr class="section-divider">
         <h1>Past Projects</h1>
 
-        <br>
+        <div class="projects-grid">
 
-        <li>
-            <a href="projects/machine_learning.html"
-                style="font-size:1.0em; font-weight:bold; text-decoration:none; flex:1; min-width:0;">
-                Machine Learning, Evolutionary Algorithms, Reinforcement Learning
+            <a class="project-card" href="projects/merl.html">
+                <img class="card-thumb" src="img/projects/merl/merl_fig.png" alt="MERL">
+                <div class="card-body">
+                    <div class="card-title">Coordinated Underwater Exploration with Multiagent Evolutionary Reinforcement Learning</div>
+                    <div class="card-desc">Training coordinated multi-robot policies for sparse-reward connectivity maintenance using a hybrid EA–RL framework.</div>
+                    <div class="card-tags">
+                        <span class="tag">multi-robot</span>
+                        <span class="tag">reinforcement-learning</span>
+                        <span class="tag">underwater</span>
+                        <span class="tag">simulation</span>
+                    </div>
+                </div>
             </a>
 
-        </li>
-        <br>
-
-        <li>
-            <a href="projects/merl.html"
-                style="font-size:1.0em; font-weight:bold; text-decoration:none; flex:1; min-width:0;">
-                Coordinated Underwater Exploration with Multiagent Evolutionary Reinforcement Learning
+            <a class="project-card" href="projects/mr_drl.html">
+                <img class="card-thumb" src="img/projects/mr_drl/gnn_arch.png" alt="Multi-robot DRL">
+                <div class="card-body">
+                    <div class="card-title">Decentralized Multi-Robot Control with Deep Reinforcement Learning</div>
+                    <div class="card-desc">Comparing CNN and GNN policies for decentralized multi-robot motion control and coordination using MAPPO.</div>
+                    <div class="card-tags">
+                        <span class="tag">multi-robot</span>
+                        <span class="tag">deep-learning</span>
+                        <span class="tag">reinforcement-learning</span>
+                        <span class="tag">simulation</span>
+                    </div>
+                </div>
             </a>
 
-        </li>
-        <br>
-
-        <li>
-            <a href="projects/mr_drl.html"
-                style="font-size:1.0em; font-weight:bold; text-decoration:none; flex:1; min-width:0;">
-                Decentralized Multi-Robot Control with Deep Reinforcement Learning
+            <a class="project-card" href="projects/machine_learning.html">
+                <img class="card-thumb" src="img/projects/machine_learning/gridworld_qLearning.png" alt="Machine Learning">
+                <div class="card-body">
+                    <div class="card-title">Machine Learning, Evolutionary Algorithms, Reinforcement Learning</div>
+                    <div class="card-desc">Class projects exploring feed-forward networks, Q-learning, DQN, and evolutionary algorithms on benchmark environments.</div>
+                    <div class="card-tags">
+                        <span class="tag">deep-learning</span>
+                        <span class="tag">reinforcement-learning</span>
+                        <span class="tag">simulation</span>
+                    </div>
+                </div>
             </a>
 
-        </li>
-
-
-
-        <!-- Item 1 -->
-        <!-- <div class="project-item" style="display:flex; align-items:flex-start; margin-bottom:24px;">
-        <a href="projects/merl.html"
-            style="font-size:1.0em; font-weight:bold; text-decoration:none; flex:1; min-width:0;">
-            Coordinated Underwater Exploration with Multiagent Evolutionary Reinforcement Learning
-        </a> -->
-
-        <!-- Fixed-width image column -->
-        <!-- <div style="width:260px; margin-left:128px; display:flex; justify-content:flex-end;">
-            <a href="projects/mr_drl.html" style="display:block;">
-            <img src="img/projects/merl/merl_fig.png" alt="MERL Project Image" style="display:block; max-width:200%; height:auto;">
+            <a class="project-card" href="projects/robot_control.html">
+                <div class="card-thumb-placeholder"></div>
+                <div class="card-body">
+                    <div class="card-title">Robot Control</div>
+                    <div class="card-desc">Robot control projects and experiments.</div>
+                    <div class="card-tags">
+                        <span class="tag">hardware</span>
+                    </div>
+                </div>
             </a>
+
+            <a class="project-card" href="projects/space_mining.html">
+                <div class="card-thumb-placeholder"></div>
+                <div class="card-body">
+                    <div class="card-title">Cardinal Space Mining</div>
+                    <div class="card-desc">Systems Director for Iowa State's NASA Lunabotics competition team.</div>
+                    <div class="card-tags">
+                        <span class="tag">hardware</span>
+                        <span class="tag">field-robotics</span>
+                    </div>
+                </div>
+            </a>
+
         </div>
-        </div> -->
-
-        <!-- Item 2 -->
-        <!-- <div class="project-item" style="display:flex; align-items:flex-start; margin-bottom:24px;">
-        <a href="projects/merl.html"
-            style="font-size:1.0em; font-weight:bold; text-decoration:none; flex:1; min-width:0;">
-            Project Two
-        </a> -->
-
-        <!-- Fixed-width image column -->
-        <!-- <div style="width:260px; margin-left:128px; display:flex; justify-content:flex-end;">
-            <a href="projects/merl.html" style="display:block;">
-            <img src="img/projects/merl/merl_fig.png" alt="MERL Project Image" style="display:block; max-width:200%; height:auto;">
-            </a>
-        </div>
-        </div> -->
-
-
-        <br>
-
     </main>
-</body>
 
+</body>
 </html>
