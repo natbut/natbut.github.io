@@ -1,29 +1,63 @@
-<!-- hybrid-dec.html -->
+<!--
+  METADATA (fill in before publishing — not rendered in browser)
+  title:       [Project Title]
+  date:        [YYYY-MM or YYYY]
+  status:      [ongoing | past]
+  tags:        [tag1, tag2]  — use canonical tags from _tags.md
+  thumbnail:   ../img/projects/[name]/thumb.png
+  description: [1–2 sentence summary for the projects.html card]
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Decentralization for Multi-Robot Orienteering with Mothership-Passenger Systems</title>
+    <title>[Project Title]</title>
     <link rel="stylesheet" href="../css/main.css">
-    <!-- <link rel="icon" type="image/x-icon" href="img/round1.png"> -->
 </head>
 
 <body>
     <header>
-        <nav class="left-nav">
+        <nav>
+            <a class="nav-logo" href="../index.html">
+                <img src="../img/site/round1.png" alt="Nathan Butler">
+            </a>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <!-- <li><a href="projects.html">Projects</a></li> -->
-                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <p class="back-nav"><a href="../projects.html">← Projects</a></p>
+
+        <h1 class="paper-title">[Project Title]</h1>
+
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            [Course or context, e.g. "Class Project for ROB 537"]<br><br>
+            <!-- Add links as needed: -->
+            <a class="btn-link" href="../docs/[filename].pdf" target="_blank">PDF</a>
+            <a class="btn-link" href="https://github.com/natbut/[repo]" target="_blank">GitHub</a>
+        </div>
+
+        <h2>Overview</h2>
+        <p class="paper-p">
+            [Project overview paragraph]
+        </p>
+
+        <!-- Repeat h2 + p.paper-p + img.center blocks as needed -->
+        <h2>[Section Title]</h2>
+        <p class="paper-p">
+            [Section content]
+        </p>
+
+        <img src="../img/projects/[name]/[figure.png]" alt="[description]" class="center">
+        <p class="fig-caption">[Optional caption]</p>
 
     </main>
-</body>
 
+</body>
 </html>
