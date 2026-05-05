@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Projects</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="nav-logo" href="../index.html">
+                <img src="../img/site/round1.png" alt="Nathan Butler">
+            </a>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p class="back-nav"><a href="../projects.html">← Projects</a></p>
+
+        <h1 class="paper-title">Experimenting with Machine Learning</h1>
+
+        <p class="paper-p">
+            Through class assignments and projects I have had the opportunity to explore multiple facets of machine learning, including network architectures, training configurations, data augmentation, and more.
+        </p>
+
+        <h2>Image Classification &amp; Feed Forward Neural Network Tuning</h2>
+        <p class="paper-p">
+            In a class assignment for AI 535: Deep Learning, I implemented a feed forward neural network for the CIFAR-10 image dataset capable of achieving ~80% validation accuracy. The network uses ReLU activation for hidden layers and a sigmoid activation for the binary output class. I experimented with batch sizes, learning rates, hidden layer widths, and numbers of hidden layers.
+            <br><br>
+            <a class="btn-link" href="https://github.com/natbut/deep-learning/tree/main/hw1_image_classification_FCNN" target="_blank">GitHub</a>
+        </p>
+
+        <img src="../img/projects/machine_learning/deep_learning_curve1.png" alt="Training curve" class="center">
+
+        <h2>Reinforcement Learning with Gridworld</h2>
+        <p class="paper-p">
+            The objective of this assignment for ROB 537: Learning-Based Control was to implement Q-Learning and SARSA agents to solve a simple gridworld environment. The environment consists of a 5×10 grid with a fixed goal location and a wall. The agent receives a reward of −1 when in any cell other than the goal cell.
+            <br><br>
+            <a class="btn-link" href="https://github.com/natbut/learning-based-control/tree/main/hw3" target="_blank">GitHub</a>
+        </p>
+
+        <img src="../img/projects/machine_learning/gridworld_qLearning.png" alt="Q-learning gridworld results" class="center">
+
+        <h2>DQN &amp; EA for Cartpole Environment</h2>
+        <p class="paper-p">
+            In another assignment for ROB 537: Learning-Based Control, I implemented a Deep Q-Network (DQN) agent and an Evolutionary Algorithm (EA) agent to solve the Gym Cartpole environment. The DQN uses two feed-forward networks (policy and target); the EA iteratively evolves a population of candidate Q-Network policies through selection, crossover, and mutation.
+            <br><br>
+            <a class="btn-link" href="https://github.com/natbut/learning-based-control/tree/main/hw4" target="_blank">GitHub</a>
+        </p>
+    </main>
+
+</body>
+</html>
