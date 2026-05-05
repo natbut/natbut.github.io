@@ -1,4 +1,3 @@
-<!-- hybrid-dec.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,175 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Learning Projects</title>
     <link rel="stylesheet" href="../css/main.css">
-    <!-- <link rel="icon" type="image/x-icon" href="img/round1.png"> -->
 </head>
 
 <body>
     <header>
-        <nav class="left-nav">
+        <nav>
+            <a class="nav-logo" href="../index.html">
+                <img src="../img/site/round1.png" alt="Nathan Butler">
+            </a>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <!-- <li><a href="projects.html">Projects</a></li> -->
-                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1 class="paper-h1">Experimenting with Machine Learning</h1>
+        <p class="back-nav"><a href="../projects.html">← Projects</a></p>
+
+        <h1 class="paper-title">Experimenting with Machine Learning</h1>
+
         <p class="paper-p">
-            Through both class assignments and projects I have had the opportunity to explore multiple facets of
-            machine learning, including network architectures, training configurations, data augmentation, and more.
+            Through class assignments and projects I have had the opportunity to explore multiple facets of machine learning, including network architectures, training configurations, data augmentation, and more.
         </p>
 
-        <br>
-
-
-        <h2>Image Classification & Feed Forward Neural Network Tuning</h2>
+        <h2>Image Classification &amp; Feed Forward Neural Network Tuning</h2>
         <p class="paper-p">
-            In a class assignment for AI 535: Deep Learning, I implemented a feed forward neural network for
-            the CIFAR-10 image dataset capable of achieving ~80% validation accuracy on the test dataset. The network
-            uses ReLU activation for its hidden layers and a signmoid activation for the single binary output class.
-
-            I experimented with different batch sizes, learning rates, hidden layer widths, and numbers of hidden
-            layers.
-
+            In a class assignment for AI 535: Deep Learning, I implemented a feed forward neural network for the CIFAR-10 image dataset capable of achieving ~80% validation accuracy. The network uses ReLU activation for hidden layers and a sigmoid activation for the binary output class. I experimented with batch sizes, learning rates, hidden layer widths, and numbers of hidden layers.
             <br><br>
-
-            The full project code and report can be found at <a
-                href="https://github.com/natbut/deep-learning/tree/main/hw1_image_classification_FCNN"> this GitHub
-                repository</a>.
-
-            The figure below presents the most stable training curve obtained during experimentation.
-
-            <br><br>
+            <a class="btn-link" href="https://github.com/natbut/deep-learning/tree/main/hw1_image_classification_FCNN" target="_blank">GitHub</a>
         </p>
 
-        <img src="../img/projects/machine_learning/deep_learning_curve1.png" alt="" style="max-width: 100%;" class="center">
-
-        <br>
-
-
-        <!-- <h2>ResNet-14 with PyTorch+Tensorboard</h2>
-        <p class="paper-p">
-            In another class assignment for AI 535: Deep Learning, I implemented ResNet-14 using PyTorch and trained it
-            on the CIFAR-10 dataset. For this project, I also used Tensorboard to visualize training and validation metrics.
-
-
-            I experimented with different batch sizes, learning rates, hidden layer widths, and numbers of hidden
-            layers.
-
-            The full project code and report can be found at <a
-                href="https://github.com/natbut/deep-learning/tree/main/hw2_resNet14"> this GitHub
-                repository</a>.
-        </p>
-
-        <img src="../img/projects/machine_learning/deep_learning_curve1.png" alt="" style="max-width: 100%;" class="center">
-
-        <br> -->
+        <img src="../img/projects/machine_learning/deep_learning_curve1.png" alt="Training curve" class="center">
 
         <h2>Reinforcement Learning with Gridworld</h2>
         <p class="paper-p">
-            The objective of this assignment for ROB 537: Learning-Based Control was to implement Q-Learning and SARSA
-            agents to solve a simple gridworld environment. The environment consists of a 5x10 grid with a fixed goal
-            location
-            and a wall that the agent cannot move through. The agent can take one of four up/down/left/right actions per
-            step.
-            Finally, the agent receives a reward of -1 when in any cell other than the goal cell. These characteristics
-            define the problem and feedback used for the RL agents.
-
+            The objective of this assignment for ROB 537: Learning-Based Control was to implement Q-Learning and SARSA agents to solve a simple gridworld environment. The environment consists of a 5×10 grid with a fixed goal location and a wall. The agent receives a reward of −1 when in any cell other than the goal cell.
             <br><br>
-
-            The full project code and report can be found at <a
-                href="https://github.com/natbut/learning-based-control/tree/main/hw3"> this GitHub
-                repository</a>.
-
-            The figure below presents the most stable training curve, obtained with a Q-Learning agent, as well as the
-            learned best actions for each cell state in the gridworld environment.
-
-            <br><br>
+            <a class="btn-link" href="https://github.com/natbut/learning-based-control/tree/main/hw3" target="_blank">GitHub</a>
         </p>
 
-        <img src="../img/projects/machine_learning/gridworld_qLearning.png" alt="" style="max-width: 100%;" class="center">
+        <img src="../img/projects/machine_learning/gridworld_qLearning.png" alt="Q-learning gridworld results" class="center">
 
-        <br>
-
-
-        <h2>DQN & EA for Cartpole Environment</h2>
+        <h2>DQN &amp; EA for Cartpole Environment</h2>
         <p class="paper-p">
-            In another assignment for ROB 537: Learning-Based Control, I implemented a Deep Q-Network (DQN) agent and an
-            Evolutionary
-            Algorithm (EA) agent to solve the Gym Cartpole environment. The objective of this environment is to keep a
-            pole balanced on top of a moving cart by applying left/right forces to the cart, where a reward of +1 is
-            provided at each step that the pole is off of the ground.
-
+            In another assignment for ROB 537: Learning-Based Control, I implemented a Deep Q-Network (DQN) agent and an Evolutionary Algorithm (EA) agent to solve the Gym Cartpole environment. The DQN uses two feed-forward networks (policy and target); the EA iteratively evolves a population of candidate Q-Network policies through selection, crossover, and mutation.
             <br><br>
-
-            The DQN architecture used two feed forward neural networks: one for estimating Q-values and one "target"
-            network that acts as a stable reference during training. The EA agent uses iteratively evolves a population
-            of candidate Q-Network policies through multiple generations of selection, crossover, and mutation
-            operations.
-
-            <br><br>
-
-            The full project code and report can be found at <a
-                href="https://github.com/natbut/learning-based-control/tree/main/hw4"> this GitHub
-                repository</a>.
-
+            <a class="btn-link" href="https://github.com/natbut/learning-based-control/tree/main/hw4" target="_blank">GitHub</a>
         </p>
-
-        <!-- <img src="../img/projects/machine_learning/gridworld_qLearning.png" alt="" style="max-width: 100%;" class="center"> -->
-
-        <br>
-
-
-        <!-- <h2>GNN & CNN for Decentralized Multi-Robot RL</h2>
-        <p class="paper-p">
-            Multi-robot systems require both task allocation and motion control to operate efficiently in cluttered
-            environments.
-            Deep Reinforcement Learning (DRL) has shown promise, with Convolutional Neural Networks (CNNs) excelling in
-            motion control and Graph Neural Networks (GNNs) enabling coordination through message passing.
-
-            <br><br>
-            This project evaluated CNN- and GNN- based DRL policies for decentralized multi-robot control, assessing
-            whether CNNs can implicitly develop coordination from local sensor inputs and whether GNNs offer advantages
-            through explicit communication.
-
-            <br><br>
-
-            We evaluated each architecture in a simulated multi-agent training environment where multiple agents must
-            move towards task locations while avoiding obstacles. The below figure presents the high-level CNN network
-            architecture,
-            including image samples provided to each agent as input.
-
-            <img src="../img/projects/mr_drl/cnn_arch.png" alt="" style="max-width: 100%;" class="center">
-
-            <br><br>
-
-            For the GNN, each agent receives a summary of its local observations rather than image data. The GNN
-            architecture exchanges information between neighboring agents through message passing layers, enabling
-            coordinated decision-making based on shared knowledge of the environment and other agents' states. The
-            figure below illustrates the high-level GNN architecture.
-
-            <img src="../img/projects/mr_drl/gnn_arch.png" alt="" style="max-width: 100%;" class="center">
-
-            <br><br>
-
-            While training performance shows that these policies can learn useful
-            control inputs, qualitative analysis of the resulting
-            trajectories indicate limited support for coordinated actions.
-
-            <br><br>
-
-            The full project code and report can be found at <a
-                href="https://github.com/natbut/multi-robot-DRL/tree/main"> this GitHub
-                repository</a>.
-
-        </p>
- -->
-
-
     </main>
-</body>
 
+</body>
 </html>

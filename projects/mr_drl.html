@@ -1,114 +1,77 @@
-<!-- hybrid-dec.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Robot DRL</title>
+    <title>Decentralized Multi-Robot Control with DRL</title>
     <link rel="stylesheet" href="../css/main.css">
-    <!-- <link rel="icon" type="image/x-icon" href="img/round1.png"> -->
 </head>
 
 <body>
     <header>
-        <nav class="left-nav">
+        <nav>
+            <a class="nav-logo" href="../index.html">
+                <img src="../img/site/round1.png" alt="Nathan Butler">
+            </a>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <!-- <li><a href="projects.html">Projects</a></li> -->
-                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1 class="paper-h1">Decentralized Multi-Robot Control with Deep Reinforcement Learning</h1>
+        <p class="back-nav"><a href="../projects.html">← Projects</a></p>
 
-        <div style="text-align: center;">
-            Class Project for AI 535: Deep Learning
-            <br><br>
-            <a href="../docs/Multi_Robot_Control_with_Deep_Reinforcement_Learning.pdf">PDF</a>
+        <h1 class="paper-title">Decentralized Multi-Robot Control with Deep Reinforcement Learning</h1>
+
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            Class Project for AI 535: Deep Learning<br><br>
+            <a class="btn-link" href="../docs/Multi_Robot_Control_with_Deep_Reinforcement_Learning.pdf" target="_blank">PDF</a>
+            <a class="btn-link" href="https://github.com/natbut/multi-robot-DRL/tree/main" target="_blank">GitHub</a>
         </div>
-
-        <br>
 
         <h2>Overview</h2>
         <p class="paper-p">
-            Multi-robot systems require both task allocation and motion control to operate efficiently in cluttered
-            environments.
-            Deep Reinforcement Learning (DRL) has shown promise, with Convolutional Neural Networks (CNNs) excelling in
-            motion control and Graph Neural Networks (GNNs) enabling coordination through message passing.
-
+            Multi-robot systems require both task allocation and motion control to operate efficiently in cluttered environments. Deep Reinforcement Learning (DRL) has shown promise, with Convolutional Neural Networks (CNNs) excelling in motion control and Graph Neural Networks (GNNs) enabling coordination through message passing.
             <br><br>
-            This project evaluated CNN- and GNN- based DRL policies for decentralized multi-robot control, assessing
-            whether CNNs can implicitly develop coordination from local sensor inputs and whether GNNs offer advantages
-            through explicit communication.
+            This project evaluated CNN- and GNN-based DRL policies for decentralized multi-robot control, assessing whether CNNs can implicitly develop coordination from local sensor inputs and whether GNNs offer advantages through explicit communication.
         </p>
-
-        <br>
 
         <h2>Network Architectures</h2>
         <p class="paper-p">
-            We evaluated each architecture in a simulated multi-agent training environment where multiple agents must
-            move towards task locations while avoiding obstacles. The below figure presents the high-level CNN network
-            architecture,
-            including image samples provided to each agent as input.
-
-            <img src="../img/projects/mr_drl/cnn_arch.png" alt="" style="max-width: 100%;" class="center">
-
-            <br><br>
-
-            For the GNN, each agent receives a summary of its local observations rather than image data. The GNN
-            architecture exchanges information between neighboring agents through message passing layers, enabling
-            coordinated decision-making based on shared knowledge of the environment and other agents' states. The
-            figure below illustrates the high-level GNN architecture.
-
-            <img src="../img/projects/mr_drl/gnn_arch.png" alt="" style="max-width: 100%;" class="center">
-
-            <br><br>
-
-            Both policies were trained using Multi-Agent Proximal Policy Optimization (MAPPO), a popular DRL algorithm
-            for multi-agent settings.
-
+            We evaluated each architecture in a simulated multi-agent training environment where multiple agents must move towards task locations while avoiding obstacles. The figure below presents the high-level CNN architecture.
         </p>
 
-        <br>
+        <img src="../img/projects/mr_drl/cnn_arch.png" alt="CNN architecture" class="center">
+
+        <p class="paper-p">
+            For the GNN, each agent receives a summary of its local observations rather than image data. The GNN architecture exchanges information between neighboring agents through message passing layers, enabling coordinated decision-making based on shared knowledge of the environment and other agents' states.
+        </p>
+
+        <img src="../img/projects/mr_drl/gnn_arch.png" alt="GNN architecture" class="center">
+
+        <p class="paper-p">Both policies were trained using Multi-Agent Proximal Policy Optimization (MAPPO).</p>
 
         <h2>Training Performance</h2>
         <p class="paper-p">
-
-            We evaluated training performance based on average episode rewards over training. The figure below presents
-            experimental results for RL minibatch iterations, sizes, and learning rates for the CNN. The results
-            indicate that larger minibatch sizes and smaller learning rates yield the most stable learning outcomes.
-
-            <img src="../img/projects/mr_drl/cnn_res.png" alt="" style="max-width: 100%;" class="center">
-
-            <br><br>
-
-            We also evaluated multiple GNN aggregation functions, finding that the Transformer method yields the best
-            performance. The following figure presents these results.
-
-
-            <img src="../img/projects/mr_drl/gnn_res.png" alt="" style="max-width: 80%;" class="center">
-
-            <br><br>
-
-            Ultimately, while training performance shows that these policies can learn useful control inputs,
-            qualitative analysis of the resulting
-            trajectories indicate limited support for coordinated actions.
-
-            <br><br>
-
-            The full project code and report can be found at <a
-                href="https://github.com/natbut/multi-robot-DRL/tree/main"> this GitHub
-                repository</a>.
-
+            We evaluated training performance based on average episode rewards over training. The figure below presents experimental results for RL minibatch iterations, sizes, and learning rates for the CNN. Larger minibatch sizes and smaller learning rates yield the most stable learning outcomes.
         </p>
 
-        <br>
+        <img src="../img/projects/mr_drl/cnn_res.png" alt="CNN training results" class="center">
 
+        <p class="paper-p">
+            We also evaluated multiple GNN aggregation functions, finding that the Transformer method yields the best performance.
+        </p>
 
+        <img src="../img/projects/mr_drl/gnn_res.png" alt="GNN training results" style="max-width: 80%;" class="center">
+
+        <p class="paper-p">
+            Ultimately, while training performance shows that these policies can learn useful control inputs, qualitative analysis of the resulting trajectories indicates limited support for coordinated actions.
+        </p>
     </main>
-</body>
 
+</body>
 </html>
