@@ -1,188 +1,422 @@
+/* =============================================================
+   DESIGN TOKENS
+   All colors, fonts, and spacing are defined here as CSS
+   custom properties. To restyle the site, edit only this block.
+   ============================================================= */
+:root {
+  /* Backgrounds */
+  --bg-page:   #F4F3EF;   /* warm light gray — main page background */
+  --bg-card:   #FFFFFF;   /* white — project cards */
+  --bg-subtle: #ECEAE4;   /* slightly darker warm gray — dividers, tag chips */
+
+  /* Text */
+  --text-primary:   #1E1E1E;  /* near-black — body text */
+  --text-secondary: #5A5A5A;  /* medium gray — captions, metadata */
+  --text-heading:   #1B3A5C;  /* deep navy — h1, h2 */
+
+  /* Accents */
+  --accent-navy:  #1B3A5C;   /* deep navy — headings, active nav, card left-borders */
+  --accent-amber: #C97D2E;   /* amber — links, tags, hover states */
+
+  /* Typography */
+  --font-body: system-ui, 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', monospace; /* timestamps, tag chips, captions ONLY */
+  --font-size-base: 18px;
+  --font-size-sm:   13px;
+
+  /* Spacing & Shape */
+  --space-section:  3rem;
+  --space-card-gap: 1.5rem;
+  --radius-card:    6px;
+  --radius-tag:     3px;
+}
+
+/* =============================================================
+   BASE
+   ============================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    margin-left: 25%;
-    margin-right: 25%;
-    font-family: 'Calibri', Times, serif;
-    font-size: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.7;
 }
 
-@media only screen and (max-width: 1700px) {
-    body {
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    body {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    body {
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-
-    .profile-img-right {
-        display: none;
-        padding-left: 0%;
-    }
-
-    .intro-text {
-        padding-right: 0%;
-    }
-
-    #profile-img-top {
-        display: block;
-    }
-}
-
-@media only screen and (max-width: 480) {
-    body {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-}
+@media (max-width: 1200px) { body { padding: 0 1.5rem; } }
+@media (max-width: 768px)  { body { padding: 0 1rem; } }
+@media (max-width: 480px)  { body { font-size: 15px; } }
 
 h1 {
-    padding: 0%;
-    margin: 0%;
-    font-weight: normal;
-    font-size: 38px;
-    color: rgb(68, 114, 196);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--text-heading);
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
-    padding-top: 2.5%;
-    margin: 0%;
-    font-weight: normal;
-    font-size: 24px;
-    font-style: italic;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--text-heading);
+  margin: 0;
+  padding-top: 1.5rem;
 }
 
 a {
-    text-decoration: underline dotted rgb(237, 125, 49) 2px;
-    text-underline-offset: 3px;
-    color: black;
+  color: var(--text-primary);
+  text-decoration: underline dotted var(--accent-amber) 2px;
+  text-underline-offset: 3px;
 }
 
 a:hover {
-    text-decoration: none;
-    color: rgb(203, 153, 61);
+  color: var(--accent-amber);
+  text-decoration: none;
 }
 
+/* =============================================================
+   NAVIGATION
+   ============================================================= */
 nav {
-    padding-bottom: 2.5%;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 0 1rem;
+  border-bottom: 1px solid var(--bg-subtle);
+  margin-bottom: 2rem;
 }
 
-nav li {
-    display: inline-block;
-    margin-right: 2%;
+.nav-logo {
+  margin-right: auto;
+}
+
+.nav-logo img {
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 50%;
 }
 
 nav ul {
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
 }
 
-nav ul img {
-    width: 100px;
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-secondary);
 }
 
-.intro-text {
-    width: 75%;
-    padding-right: 2.5%;
-    vertical-align: middle;
-    text-align: left;
+nav ul li a:hover {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent-amber);
+  padding-bottom: 2px;
 }
 
-.profile-img-right {
-    width: 25%;
-    min-width: 250px;
-    padding-left: 2.5%;
+nav ul li a.active {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent-amber);
+  padding-bottom: 2px;
 }
 
-.profile-img-top {
-    min-width: 250px;
-    text-align: center;
-    display: none;
+/* Back-nav on detail pages */
+.back-nav {
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-sm);
 }
 
-.project-item {
-    width: 50%;
-    vertical-align: top;
-    padding-bottom: 2%;
-    padding-right: 2%;
+.back-nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
 }
 
-.left-nav {
-    padding-bottom: 2.5%;
-    text-align: left;
+.back-nav a:hover { color: var(--accent-amber); }
+
+/* =============================================================
+   SECTION DIVIDERS (homepage only)
+   ============================================================= */
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--accent-navy);
+  width: 4rem;
+  margin: var(--space-section) 0 2rem 0;
 }
 
-.experience-ul {
-    padding-top: 0%;
+/* =============================================================
+   ABOUT SECTION
+   ============================================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1.5rem;
 }
 
-.experience-ul li {
-    padding-bottom: 2.5%;
+.about-photo img {
+  width: 100%;
+  display: block;
+  border-left: 6px solid var(--accent-navy);
 }
 
+.about-links {
+  margin-top: 1rem;
+  font-size: 0.95em;
+}
+
+.about-links a { margin-right: 0.75rem; }
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { display: none; }
+}
+
+/* =============================================================
+   FEATURED WORK (homepage)
+   ============================================================= */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-card-gap);
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) { .featured-grid { grid-template-columns: 1fr; } }
+
+.featured-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-subtle);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, border-left-width 0.1s ease;
+}
+
+.featured-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  border-left: 4px solid var(--accent-amber);
+  color: var(--text-primary);
+}
+
+.featured-card .card-thumb {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-subtle);
+}
+
+.featured-card .card-body { padding: 0.75rem 1rem 1rem; }
+
+.featured-card .card-title {
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+}
+
+.featured-card .card-desc {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.featured-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* =============================================================
+   TAG CHIPS (shared)
+   ============================================================= */
+.tag {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border-radius: var(--radius-tag);
+  padding: 2px 6px;
+}
+
+/* =============================================================
+   UPDATES LIST
+   ============================================================= */
 .updates-ul {
-    padding-top: 0%;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
 
-.updates-ul li {
-    padding-bottom: 2.5%;
+.updates-ul li { padding-bottom: 1.25rem; }
+
+.update-date {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-right: 0.5rem;
 }
 
+/* =============================================================
+   EXPERIENCE LIST
+   ============================================================= */
+.experience-ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.experience-ul li { padding-bottom: 1rem; }
+
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.exp-role { color: var(--text-heading); font-weight: bold; }
+
+/* =============================================================
+   PROJECTS PAGE — CARD GRID
+   ============================================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-card-gap);
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-subtle);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, border-left-width 0.1s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  border-left: 4px solid var(--accent-amber);
+  color: var(--text-primary);
+}
+
+.project-card .card-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card .card-thumb-placeholder {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-subtle);
+  display: block;
+}
+
+.project-card .card-body { padding: 1rem; }
+
+.project-card .card-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project-card .card-desc {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.project-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* =============================================================
+   PUBLICATIONS PAGE
+   ============================================================= */
 .pubs-ul {
-    padding-top: 0%;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
 
 .pubs-ul li {
-    margin-bottom: 2.5%;
+  border-left: 4px solid var(--accent-navy);
+  padding: 0.75rem 0 0.75rem 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.paper-h1 {
-    padding: 0%;
-    margin: 0%;
-    font-weight: normal;
-    font-size: 38px;
-    text-align: center;
-    color: rgb(68, 114, 196);
+.pub-venue { color: var(--accent-amber); }
+
+/* =============================================================
+   DETAIL PAGES (project & publication)
+   ============================================================= */
+.paper-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-heading);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
 
 .paper-p {
-    padding: 0%;
-    margin: 0%;
-    font-weight: normal;
-    text-align: justify;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid var(--accent-amber);
+  border-radius: var(--radius-tag);
+  color: var(--accent-amber);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  margin-right: 0.5rem;
+}
+
+.btn-link:hover {
+  background: var(--accent-amber);
+  color: #fff;
+}
+
+.fig-caption {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 0.4rem;
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
 }
 
-
-#last-modified {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-}
-
-#publish-date {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+/* Monospace metadata */
+#last-modified, #publish-date {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
 }
